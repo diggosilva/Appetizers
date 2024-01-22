@@ -9,12 +9,21 @@ import UIKit
 
 struct Components {
     
-    static func buildImage() -> UIImageView {
+    static func buildCardBG() -> UIView {
+        let cardView = UIView()
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        cardView.layer.cornerRadius = 20
+        cardView.clipsToBounds = true
+        cardView.backgroundColor = .systemBackground
+        return cardView
+    }
+    
+    static func buildImage(image: UIImage? = nil, cornerRadius: CGFloat) -> UIImageView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "food-placeholder")
+        imageView.image = image
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = cornerRadius
         imageView.clipsToBounds = true
         return imageView
     }
@@ -38,12 +47,14 @@ struct Components {
         return textField
     }
     
-    static func buildButton(setTitle: String, action: Selector) -> UIButton {
-        let button = UIButton(type: .system)
+    static func buildButton(setTitle: String, setTitleColor: UIColor, font: UIFont, backgroundColor: UIColor, action: Selector) -> UIButton {
+        let button = UIButton(type: .roundedRect)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(setTitle, for: .normal)
-        button.setTitleColor(.accent, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 17)
+        button.setTitleColor(setTitleColor, for: .normal)
+        button.titleLabel?.font = font
+        button.backgroundColor = backgroundColor
+        button.layer.cornerRadius = 10
         button.addTarget(self, action: action, for: .touchUpInside)
         return button
     }

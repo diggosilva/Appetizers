@@ -29,6 +29,7 @@
 		921E39EA2B1BE3A6002F22A5 /* AppetizerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921E39E92B1BE3A6002F22A5 /* AppetizerDetailViewController.swift */; };
 		92298A822B5A06C50074BB83 /* AppetizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92298A812B5A06C50074BB83 /* AppetizerViewModel.swift */; };
 		92298A842B5A07A80074BB83 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92298A832B5A07A80074BB83 /* Bindable.swift */; };
+		929565062B5AD46800E3953F /* AppetizerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929565052B5AD46800E3953F /* AppetizerDetailViewModel.swift */; };
 		92D8836C2B583EA800BB2285 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8836B2B583EA800BB2285 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		921E39E92B1BE3A6002F22A5 /* AppetizerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailViewController.swift; sourceTree = "<group>"; };
 		92298A812B5A06C50074BB83 /* AppetizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerViewModel.swift; sourceTree = "<group>"; };
 		92298A832B5A07A80074BB83 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		929565052B5AD46800E3953F /* AppetizerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailViewModel.swift; sourceTree = "<group>"; };
 		92D8836B2B583EA800BB2285 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 		92298A872B5A1A7D0074BB83 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				929565052B5AD46800E3953F /* AppetizerDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				92298A822B5A06C50074BB83 /* AppetizerViewModel.swift in Sources */,
 				921C32902B56ACCC00F5419C /* AccountView.swift in Sources */,
 				921E39DD2B1BC545002F22A5 /* AppetizerView.swift in Sources */,
+				929565062B5AD46800E3953F /* AppetizerDetailViewModel.swift in Sources */,
 				921143092B1CC4C700116615 /* OrderViewController.swift in Sources */,
 				921E39C82B1BA4A5002F22A5 /* AppetizerTabBar.swift in Sources */,
 				921E39C42B1BA4A5002F22A5 /* AppDelegate.swift in Sources */,

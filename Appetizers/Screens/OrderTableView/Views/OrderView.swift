@@ -10,13 +10,7 @@ import UIKit
 class OrderView: UIView {
     
     lazy var emptyImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "emptystate")
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-        return imageView
+        Components.buildImage(image: UIImage(systemName: "basket"), cornerRadius: 10)
     }()
     
     lazy var emptyLabel: UILabel = {
@@ -31,15 +25,7 @@ class OrderView: UIView {
     }()
     
     lazy var allOrderButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("R$0.00 - Total", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
-        button.backgroundColor = #colorLiteral(red: 0, green: 0.4554999471, blue: 0.3058299422, alpha: 1)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(didTapAllOrder), for: .touchUpInside)
-        return button
+        Components.buildButton(setTitle: "R$0.00 - Total", setTitleColor: .white, font: .systemFont(ofSize: 18, weight: .semibold), backgroundColor: #colorLiteral(red: 0, green: 0.4554999471, blue: 0.3058299422, alpha: 1), action: #selector(didTapAllOrder))
     }()
     
     override init(frame: CGRect) {
@@ -77,8 +63,8 @@ class OrderView: UIView {
             
             emptyImage.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
             emptyImage.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: -150),
-            emptyImage.widthAnchor.constraint(equalToConstant: 200),
-            emptyImage.heightAnchor.constraint(equalToConstant: 200),
+            emptyImage.widthAnchor.constraint(equalToConstant: 80),
+            emptyImage.heightAnchor.constraint(equalToConstant: 80),
             
             emptyLabel.centerXAnchor.constraint(equalTo: emptyImage.centerXAnchor),
             emptyLabel.topAnchor.constraint(equalTo: emptyImage.bottomAnchor, constant: 10),

@@ -92,7 +92,7 @@ extension AppetizerViewController: UITableViewDelegate, UITableViewDataSource {
         
         let appetizerSelected = viewModel.getAppetizer(of: indexPath)
         let apDetailVC = AppetizerDetailViewController()
-        apDetailVC.appetizer = appetizerSelected
+        apDetailVC.viewModel.appetizer = appetizerSelected
         
         present(apDetailVC, animated: true)
         modalPresentationStyle = .automatic

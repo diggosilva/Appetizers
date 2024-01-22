@@ -36,6 +36,7 @@ class AppetizerViewModel: AppetizerViewModelIN {
         state.value = .loading
         service.getAppetizers { response in
             self.appetizerList = response
+            self.state.value = .loaded
         } onError: { error in
             self.state.value = .error
         }

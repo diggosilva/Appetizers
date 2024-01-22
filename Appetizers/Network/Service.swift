@@ -39,7 +39,6 @@ final class Service: ServiceProtocol {
                 do {
                     let appetizer = try JSONDecoder().decode(AppetizerResponse.self, from: data)
                     onSuccess(appetizer.request)
-                    print("DEBUG: Lista de Aperitivos: \(appetizer.request)")
                 } catch {
                     onError(error)
                     print("DEBUG: Falha ao decodificar com o erro: \(error.localizedDescription)")

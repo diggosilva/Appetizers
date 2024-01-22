@@ -13,7 +13,7 @@ class AppetizerCell: UITableViewCell {
     static let identifier = "AppetizerCell"
     
     lazy var appetizerImage: UIImageView = {
-        Components.buildImage()
+        Components.buildImage(cornerRadius: 10)
     }()
     
     lazy var appetizerName: UILabel = {

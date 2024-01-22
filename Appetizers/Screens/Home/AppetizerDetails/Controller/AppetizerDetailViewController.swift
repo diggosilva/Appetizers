@@ -12,6 +12,8 @@ class AppetizerDetailViewController: UIViewController {
     let appetizerDetailView = AppetizerDetailView()
     let order = Order()
     var appetizer: Appetizer?
+    
+    var viewModel = AppetizerDetailViewModel()
 
     override func loadView() {
         super.loadView()
@@ -23,6 +25,10 @@ class AppetizerDetailViewController: UIViewController {
         setDelegates()
         guard let appetizer else { return }
         appetizerDetailView.configure(model: appetizer)
+    }
+    
+    func loadDetails() {
+//        viewModel.appetizer?.name
     }
     
     func setDelegates() {

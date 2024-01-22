@@ -18,22 +18,11 @@ class AppetizerDetailView: UIView {
     weak var delegate: AppetizerDetailViewDelegate?
     
     lazy var cardImage: UIView = {
-        let cardView = UIView()
-        cardView.translatesAutoresizingMaskIntoConstraints = false
-        cardView.layer.cornerRadius = 20
-        cardView.clipsToBounds = true
-        cardView.backgroundColor = .systemBackground
-        return cardView
+        Components.buildCardBG()
     }()
-   
+    
     lazy var appetizerImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "steak-placeholder")
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 20
-        imageView.clipsToBounds = true
-        return imageView
+        Components.buildImage(image: UIImage(named: "bife"), cornerRadius: 20)
     }()
     
     lazy var xButton: UIButton = {
@@ -95,15 +84,7 @@ class AppetizerDetailView: UIView {
     }()
     
     lazy var orderButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("R$\(9.98) - Adicionar", for: .normal)
-        button.setTitleColor(.accent, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18)
-        button.backgroundColor = .accent.withAlphaComponent(0.2)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(didTapAddOrder), for: .touchUpInside)
-        return button
+        Components.buildButton(setTitle: "RS\(1.23) - Adicionar", setTitleColor: .accent, font: .systemFont(ofSize: 18), backgroundColor: .accent.withAlphaComponent(0.2), action: #selector(didTapAddOrder))
     }()
     
     var selectedAppetizer: Appetizer?
@@ -146,13 +127,7 @@ class AppetizerDetailView: UIView {
     }
     
     private func setHierarchy () {
-        addSubview(cardImage)
-        addSubview(appetizerImage)
-        addSubview(xButton)
-        addSubview(appetizerName)
-        addSubview(appetizerDescription)
-        addSubview(hStackValues)
-        addSubview(orderButton)
+        addSubviews([cardImage, appetizerImage, xButton, appetizerName, appetizerDescription, hStackValues, orderButton])
     }
     
     private func setConstraints() {

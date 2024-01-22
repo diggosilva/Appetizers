@@ -61,7 +61,7 @@ class AccountView: UIView {
     }()
     
     lazy var saveButton: UIButton = {
-        Components.buildButton(setTitle: "Salvar Alterações", action: #selector(didTapSaveChanges))
+        Components.buildButton(setTitle: "Salvar Alterações", setTitleColor: .accent, font: .systemFont(ofSize: 17), backgroundColor: .clear, action: #selector(didTapSaveChanges))
     }()
     
     //MARK: - REQUESTS
