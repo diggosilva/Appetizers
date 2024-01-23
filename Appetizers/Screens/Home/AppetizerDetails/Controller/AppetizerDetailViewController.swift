@@ -39,7 +39,9 @@ extension AppetizerDetailViewController: AppetizerDetailViewDelegate {
         print("DEBUG: Adiciona item na lista de Pedido")
         let orderVC = OrderViewController()
         guard let appetizer else { return }
-        orderVC.viewModel.orderedList.append(appetizer)
+//        orderVC.viewModel.orderedList.append(appetizer)
+    
+        listaProdutos.value?.append(appetizer)
         
         orderVC.orderView.tableView.reloadData()
         dismiss(animated: true)

@@ -20,11 +20,12 @@ protocol OrderViewModelProtocol {
 class OrderViewModel: OrderViewModelProtocol {
     
     var state: Bindable<State> = Bindable()
+    var prod: Bindable<Appetizer> = Bindable()
     
     var orderedList: [Appetizer] = []
     
     func loadData() {
-        
+        orderedList = listaProdutos.value!
     }
     
     func numberOfRows() -> Int {

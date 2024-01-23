@@ -23,17 +23,13 @@ class OrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        if aperitivos.count == 0 {
-//            orderView.emptyImage.isHidden = false
-//            orderView.emptyLabel.isHidden = false
-//        } else {
-//            orderView.emptyImage.isHidden = true
-//            orderView.emptyLabel.isHidden = true
-//        }
-    }
-    
-    func isEmptyOrderView() {
-        
+        if viewModel.numberOfRows() == 0 {
+            orderView.emptyImage.isHidden = false
+            orderView.emptyLabel.isHidden = false
+        } else {
+            orderView.emptyImage.isHidden = true
+            orderView.emptyLabel.isHidden = true
+        }
     }
     
     private func setNavBar() {
