@@ -10,8 +10,6 @@ import UIKit
 class AppetizerDetailViewController: UIViewController {
     
     let appetizerDetailView = AppetizerDetailView()
-    let order = Order()
-    var appetizer: Appetizer?
     
     var viewModel = AppetizerDetailViewModel()
 
@@ -23,12 +21,12 @@ class AppetizerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        guard let appetizer else { return }
-        appetizerDetailView.configure(model: appetizer)
+        loadView()
+        loadDetails()
     }
     
     func loadDetails() {
-//        viewModel.appetizer?.name
+        appetizerDetailView.configure(model: viewModel.appetizer!)
     }
     
     func setDelegates() {
@@ -41,9 +39,9 @@ extension AppetizerDetailViewController: AppetizerDetailViewDelegate {
         print("DEBUG: Adiciona item na lista de Pedido")
         let orderVC = OrderViewController()
         guard let appetizer else { return }
-        orderVC.aperitivos.append(appetizer)
+        orderVC.viewModel.orderedList.append(appetizer)
         
-//        orderVC.orderView.tableView.reloadData()
+        orderVC.orderView.tableView.reloadData()
         dismiss(animated: true)
     }
     

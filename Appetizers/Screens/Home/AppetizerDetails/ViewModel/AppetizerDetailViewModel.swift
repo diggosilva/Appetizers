@@ -7,13 +7,15 @@
 
 import UIKit
 
+//protocol AppetizerDetailViewModelDelegate: AnyObject {
+//    func getAppetizer() -> Appetizer?
+//}
+
 class AppetizerDetailViewModel {
+    
+//    weak var delegate: AppetizerDetailViewModelDelegate?
     
     var state: Bindable<State> = Bindable()
     var appetizer: Appetizer?
-    
-    func configure(model: Appetizer) {
-        
-    }
     
 }

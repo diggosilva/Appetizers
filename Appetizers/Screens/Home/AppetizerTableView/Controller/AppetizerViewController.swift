@@ -12,7 +12,7 @@ class AppetizerViewController: UIViewController {
     
     private let appetizerView = AppetizerView()
     
-    lazy var viewModel: AppetizerViewModelIN = AppetizerViewModel()
+    lazy var viewModel: AppetizerViewModelProtocol = AppetizerViewModel()
     
     override func loadView() {
         super.loadView()

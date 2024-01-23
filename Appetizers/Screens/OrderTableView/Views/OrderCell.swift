@@ -13,35 +13,19 @@ class OrderCell: UITableViewCell {
     static let identifier = "OrderCell"
     
     lazy var appetizerImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "food-placeholder")
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-        return imageView
+        Components.buildImage(cornerRadius: 10)
     }()
     
     lazy var appetizerName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.text = "Bife com fritas. Acompanhado de salada e tomate"
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
-        return label
+        Components.buildLabel(text: "Bife com fritas. Acompanhado de salada e tomate", fontSize: .systemFont(ofSize: 20, weight: .semibold), textAlignment: .left)
     }()
     
     lazy var appetizerPrice: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "R$9,99"
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
-        label.textColor = .secondaryLabel
-        return label
+        Components.buildLabel(text: "R$9,99", textColor: .secondaryLabel, fontSize: .systemFont(ofSize: 16, weight: .semibold), textAlignment: .left)
     }()
     
     lazy var vStackView: UIStackView = {
-        Components.buildVStackView(arrangedSubviews: [appetizerName, appetizerPrice])
+        Components.buildVStackView(arrangedSubviews: [appetizerName, appetizerPrice], spacing: 0, alignment: .leading)
     }()
     
     lazy var hStackView: UIStackView = {

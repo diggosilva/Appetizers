@@ -13,7 +13,7 @@ enum State {
     case error
 }
 
-protocol AppetizerViewModelIN {
+protocol AppetizerViewModelProtocol {
     var state: Bindable<State> { get set }
     
     //TableView
@@ -24,7 +24,7 @@ protocol AppetizerViewModelIN {
     func loadData()
 }
 
-class AppetizerViewModel: AppetizerViewModelIN {
+class AppetizerViewModel: AppetizerViewModelProtocol {
     
     var state: Bindable<State> = Bindable()
     
