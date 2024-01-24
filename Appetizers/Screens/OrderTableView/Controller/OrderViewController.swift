@@ -22,11 +22,11 @@ class OrderViewController: UIViewController {
         super.viewDidLoad()
         setNavBar()
         
-        aperitivos = OrderSingleton.shared.listaProdutos.value ?? [] 
+        aperitivos = OrderSingleton.shared.listaProdutos.value 
         
         OrderSingleton.shared.listaProdutos.bind { listAppetizer in
-            self.viewModel.numberOfRows() = listAppetizer
-//            self.aperitivos = listAppetizer
+//            self.viewModel.orderedList() = listAppetizer
+            self.aperitivos = listAppetizer
             self.orderView.tableView.reloadData()
         }
     }
@@ -36,9 +36,11 @@ class OrderViewController: UIViewController {
         if viewModel.numberOfRows() == 0 {
             orderView.emptyImage.isHidden = false
             orderView.emptyLabel.isHidden = false
+            orderView.allOrderButton.isHidden = true
         } else {
             orderView.emptyImage.isHidden = true
             orderView.emptyLabel.isHidden = true
+            orderView.allOrderButton.isHidden = false
         }
     }
     
@@ -63,7 +65,6 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderCell.identifier, for: indexPath) as? OrderCell else { return UITableViewCell() }
         cell.configure(model: viewModel.orderedAppetizer(of: indexPath))
-//        tableView.reloadData()
         return cell
     }
 }

@@ -11,6 +11,8 @@ class AccountViewController: UIViewController {
     
     private var accountView = AccountView()
     
+    var viewModel = AccountViewModel()
+    
     override func loadView() {
         view = accountView
     }

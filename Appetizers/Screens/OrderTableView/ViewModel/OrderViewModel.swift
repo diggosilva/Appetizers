@@ -13,25 +13,30 @@ protocol OrderViewModelProtocol {
     //TableView
     func numberOfRows() -> Int
     func orderedAppetizer(of indexPath: IndexPath) -> Appetizer
+    func orderedList() -> [Appetizer]
     
     //Request
 }
 
 class OrderViewModel: OrderViewModelProtocol {
-    
+
     var state: Bindable<State> = Bindable(value: .loaded)
     
-    var orderedList: [Appetizer] = []
+    var listaEncomendados: [Appetizer] = []
     
     func loadData() {
        
     }
     
+    func orderedList() -> [Appetizer] {
+        return listaEncomendados
+    }
+    
     func numberOfRows() -> Int {
-        return orderedList.count
+        return listaEncomendados.count
     }
     
     func orderedAppetizer(of indexPath: IndexPath) -> Appetizer {
-        orderedList[indexPath.row]
+        listaEncomendados[indexPath.row]
     }
 }
