@@ -11,14 +11,24 @@ class OrderViewController: UIViewController {
     
     let orderView = OrderView()
     lazy var viewModel: OrderViewModelProtocol = OrderViewModel()
+    var aperitivos: [Appetizer] = []
     
     override func loadView() {
+        super.loadView()
         view = orderView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
+        
+        aperitivos = OrderSingleton.shared.listaProdutos.value ?? [] 
+        
+        OrderSingleton.shared.listaProdutos.bind { listAppetizer in
+            self.viewModel.numberOfRows() = listAppetizer
+//            self.aperitivos = listAppetizer
+            self.orderView.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +63,7 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderCell.identifier, for: indexPath) as? OrderCell else { return UITableViewCell() }
         cell.configure(model: viewModel.orderedAppetizer(of: indexPath))
-        tableView.reloadData()
+//        tableView.reloadData()
         return cell
     }
 }

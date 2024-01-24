@@ -9,13 +9,21 @@ import Foundation
 
 class Bindable<T> {
     
-    var value: T? {
-        didSet { observer?(value) }
+    init(value: T) {
+        self.value = value
     }
     
-    fileprivate var observer: ((T?) -> ())?
+    var value: T {
+        didSet {
+            observers.forEach { observe in
+                observe(value)
+            }
+        }
+    }
     
-    func bind(observer: @escaping(T?) ->()) {
-        self.observer = observer
+    fileprivate var observers: [((T) -> ())] = []
+    
+    func bind(observer: @escaping(T) ->()) {
+        self.observers.append(observer)
     }
 }

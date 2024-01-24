@@ -29,7 +29,6 @@ class AppetizerViewController: UIViewController {
     
     func handleStates() {
         viewModel.state.bind { state in
-            guard let state = state else { return }
             switch state {
             case .loaded:
                 self.showLoadedState()

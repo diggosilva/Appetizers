@@ -26,14 +26,13 @@ protocol AppetizerViewModelProtocol {
 
 class AppetizerViewModel: AppetizerViewModelProtocol {
     
-    var state: Bindable<State> = Bindable()
+    var state: Bindable<State> = Bindable(value: .loading)
     
     private var service: ServiceProtocol = Service()
     private var appetizerList: [Appetizer] = []
     
     func loadData() {
         guard !service.isUpdating() else { return }
-        state.value = .loading
         service.getAppetizers { response in
             self.appetizerList = response
             self.state.value = .loaded

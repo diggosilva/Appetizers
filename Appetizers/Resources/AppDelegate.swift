@@ -11,9 +11,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print(listaProdutos.value = [])
-        listaProdutos.bind(observer: <#T##([Appetizer]?) -> ()#>)
-            
         return true
     }
 
@@ -32,4 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-var listaProdutos: Bindable<[Appetizer]> = Bindable<[Appetizer]>()
+class OrderSingleton {
+    static let shared: OrderSingleton = OrderSingleton()
+    var listaProdutos: Bindable<[Appetizer]> = Bindable(value: [])
+    
+    private init() {}
+}

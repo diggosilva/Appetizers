@@ -15,7 +15,7 @@ class AppetizerDetailViewModel {
     
 //    weak var delegate: AppetizerDetailViewModelDelegate?
     
-    var state: Bindable<State> = Bindable()
+    var state: Bindable<State> = Bindable(value: .loaded)
     var appetizer: Appetizer?
     
 }

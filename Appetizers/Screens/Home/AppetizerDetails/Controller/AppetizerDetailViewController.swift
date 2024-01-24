@@ -12,12 +12,12 @@ class AppetizerDetailViewController: UIViewController {
     let appetizerDetailView = AppetizerDetailView()
     
     var viewModel = AppetizerDetailViewModel()
-
+    
     override func loadView() {
         super.loadView()
         view = appetizerDetailView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
@@ -36,14 +36,9 @@ class AppetizerDetailViewController: UIViewController {
 
 extension AppetizerDetailViewController: AppetizerDetailViewDelegate {
     func didTapAddOrder(appetizer: Appetizer?) {
-        print("DEBUG: Adiciona item na lista de Pedido")
-        let orderVC = OrderViewController()
         guard let appetizer else { return }
-//        orderVC.viewModel.orderedList.append(appetizer)
-    
-        listaProdutos.value?.append(appetizer)
-        
-        orderVC.orderView.tableView.reloadData()
+        print("DEBUG: Adiciona item na lista de Pedido")
+        OrderSingleton.shared.listaProdutos.value.append(appetizer)
         dismiss(animated: true)
     }
     
