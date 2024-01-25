@@ -10,7 +10,7 @@ import SDWebImage
 
 protocol AppetizerDetailViewDelegate: AnyObject {
     func didTapCancel()
-    func didTapAddOrder(appetizer: Appetizer?)
+    func didTapAddOrder()
 }
 
 class AppetizerDetailView: UIView {
@@ -114,7 +114,7 @@ class AppetizerDetailView: UIView {
     }
     
     @objc func didTapAddOrder() {
-        delegate?.didTapAddOrder(appetizer: selectedAppetizer)
+        delegate?.didTapAddOrder()
     }
     
     @objc func didTapCancel() {

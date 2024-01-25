@@ -11,7 +11,16 @@ class AppetizerDetailViewController: UIViewController {
     
     let appetizerDetailView = AppetizerDetailView()
     
-    var viewModel = AppetizerDetailViewModel()
+    var viewModel: AppetizerDetailViewModel
+    
+    init(appetizer: Appetizer) {
+        self.viewModel = AppetizerDetailViewModel(appetizer: appetizer)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -26,7 +35,7 @@ class AppetizerDetailViewController: UIViewController {
     }
     
     func loadDetails() {
-        appetizerDetailView.configure(model: viewModel.appetizer!)
+        appetizerDetailView.configure(model: viewModel.appetizer)
     }
     
     func setDelegates() {
@@ -35,10 +44,9 @@ class AppetizerDetailViewController: UIViewController {
 }
 
 extension AppetizerDetailViewController: AppetizerDetailViewDelegate {
-    func didTapAddOrder(appetizer: Appetizer?) {
-        guard let appetizer else { return }
+    func didTapAddOrder() {
         print("DEBUG: Adiciona item na lista de Pedido")
-        OrderSingleton.shared.listaProdutos.value.append(appetizer)
+        viewModel.addApetizer()
         dismiss(animated: true)
     }
     

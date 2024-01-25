@@ -7,15 +7,16 @@
 
 import UIKit
 
-//protocol AppetizerDetailViewModelDelegate: AnyObject {
-//    func getAppetizer() -> Appetizer?
-//}
-
 class AppetizerDetailViewModel {
     
-//    weak var delegate: AppetizerDetailViewModelDelegate?
-    
     var state: Bindable<State> = Bindable(value: .loaded)
-    var appetizer: Appetizer?
+    var appetizer: Appetizer
     
+    init(appetizer: Appetizer) {
+        self.appetizer = appetizer
+    }
+    
+    func addApetizer() {
+        OrderSingleton.shared.listaProdutos.value.append(appetizer)
+    }
 }

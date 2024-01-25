@@ -11,7 +11,6 @@ class OrderViewController: UIViewController {
     
     let orderView = OrderView()
     lazy var viewModel: OrderViewModelProtocol = OrderViewModel()
-    var aperitivos: [Appetizer] = []
     
     override func loadView() {
         super.loadView()
@@ -22,26 +21,21 @@ class OrderViewController: UIViewController {
         super.viewDidLoad()
         setNavBar()
         
-        aperitivos = OrderSingleton.shared.listaProdutos.value 
-        
-        OrderSingleton.shared.listaProdutos.bind { listAppetizer in
-//            self.viewModel.orderedList() = listAppetizer
-            self.aperitivos = listAppetizer
+        viewModel.state.bind { state in
+            switch state {
+            case .empty:
+                self.orderView.emptyImage.isHidden = false
+                self.orderView.emptyLabel.isHidden = false
+                self.orderView.allOrderButton.isHidden = true
+            case .loaded:
+                self.orderView.emptyImage.isHidden = true
+                self.orderView.emptyLabel.isHidden = true
+                self.orderView.allOrderButton.isHidden = false
+                self.orderView.allOrderButton.setTitle(self.viewModel.appetizersValue(), for: .normal)
+            }
             self.orderView.tableView.reloadData()
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if viewModel.numberOfRows() == 0 {
-            orderView.emptyImage.isHidden = false
-            orderView.emptyLabel.isHidden = false
-            orderView.allOrderButton.isHidden = true
-        } else {
-            orderView.emptyImage.isHidden = true
-            orderView.emptyLabel.isHidden = true
-            orderView.allOrderButton.isHidden = false
-        }
+        viewModel.loadData()
     }
     
     private func setNavBar() {
@@ -66,5 +60,11 @@ extension OrderViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderCell.identifier, for: indexPath) as? OrderCell else { return UITableViewCell() }
         cell.configure(model: viewModel.orderedAppetizer(of: indexPath))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteItems(indexPath)
+        }
     }
 }

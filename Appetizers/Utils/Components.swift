@@ -44,6 +44,7 @@ struct Components {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = placeholder
         textField.keyboardType = keyboardType
+        textField.clearButtonMode = .whileEditing
         return textField
     }
     
