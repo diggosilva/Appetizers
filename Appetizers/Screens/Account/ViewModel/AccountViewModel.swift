@@ -7,24 +7,6 @@
 
 import Foundation
 
-class User: Codable {
-    let name: String
-    let lastName: String
-    let email: String
-    let birthday: Date
-    let napkins: Bool
-    let refill: Bool
-    
-    init(name: String, lastName: String, email: String, birthday: Date, napkins: Bool, refill: Bool) {
-        self.name = name
-        self.lastName = lastName
-        self.email = email
-        self.birthday = birthday
-        self.napkins = napkins
-        self.refill = refill
-    }
-}
-
 protocol AccountViewModelProtocol {
     var user: User? { get }
     
@@ -32,7 +14,7 @@ protocol AccountViewModelProtocol {
     func saveUser(name: String, lastName: String, email: String, birthday: Date, napkins: Bool, refill: Bool)
 }
 
-class AccountViewModel {
+class AccountViewModel: AccountViewModelProtocol {
     
     let userKey = "UserKey"
     var user: User?

@@ -22,8 +22,9 @@ class AppetizerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
-        handleStates()
         setDelegatesAndDataSources()
+        handleStates()
+        handleRequestWay()
         viewModel.loadData()
     }
     
@@ -62,6 +63,33 @@ class AppetizerViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    //MARK: - Handle RequestWay
+    
+    func handleRequestWay() {
+        viewModel.requestWay.bind { requestWay in
+            switch requestWay {
+            case .unknown:
+                showUnknown()
+            case .online:
+                showOnline()
+            case .local:
+                showLocal()
+            }
+        }
+        
+        func showUnknown() {
+            navigationItem.rightBarButtonItem = nil
+        }
+        
+        func showOnline() {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "checkmark.icloud.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal), style: .plain, target: nil, action: nil)
+        }
+           
+        func showLocal() {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark.icloud.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), style: .plain, target: nil, action: nil)
+        }
+    }
+    
     private func setNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "🍟 Aperitivos"
@@ -91,6 +119,8 @@ extension AppetizerViewController: UITableViewDelegate, UITableViewDataSource {
         
         let appetizerSelected = viewModel.getAppetizer(of: indexPath)
         let apDetailVC = AppetizerDetailViewController(appetizer: appetizerSelected)
+        apDetailVC.modalPresentationStyle = .overFullScreen
+        apDetailVC.modalTransitionStyle = .crossDissolve
         
         present(apDetailVC, animated: true)
         modalPresentationStyle = .automatic

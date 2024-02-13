@@ -25,7 +25,7 @@ class OrderView: UIView {
     }()
     
     lazy var allOrderButton: UIButton = {
-        Components.buildButton(setTitle: "R$ - Adicionar", setTitleColor: .accent, font: .systemFont(ofSize: 18), backgroundColor: .accent.withAlphaComponent(0.2), action: #selector(didTapAllOrder))
+        Components.buildButton(setTitle: "R$ - Adicionar", setTitleColor: .accent, font: .systemFont(ofSize: 18, weight: .semibold), backgroundColor: .accent.withAlphaComponent(0.2), action: #selector(didTapAllOrder))
     }()
     
     override init(frame: CGRect) {

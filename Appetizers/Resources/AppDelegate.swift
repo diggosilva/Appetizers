@@ -28,10 +28,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
-
-class OrderSingleton {
-    static let shared: OrderSingleton = OrderSingleton()
-    var listaProdutos: Bindable<[Appetizer]> = Bindable(value: [])
-    
-    private init() {}
-}

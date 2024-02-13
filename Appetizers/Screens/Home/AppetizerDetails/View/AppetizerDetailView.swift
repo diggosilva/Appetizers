@@ -87,8 +87,6 @@ class AppetizerDetailView: UIView {
         Components.buildButton(setTitle: "RS\(1.23) - Adicionar", setTitleColor: .accent, font: .systemFont(ofSize: 18), backgroundColor: .accent.withAlphaComponent(0.2), action: #selector(didTapAddOrder))
     }()
     
-    var selectedAppetizer: Appetizer?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -99,7 +97,6 @@ class AppetizerDetailView: UIView {
     }
     
     func configure(model: Appetizer) {
-        selectedAppetizer = model
         guard let url = URL(string: model.imageURL) else { return }
         
         DispatchQueue.main.async {
@@ -122,6 +119,7 @@ class AppetizerDetailView: UIView {
     }
     
     private func setupView() {
+        backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         setHierarchy()
         setConstraints()
     }

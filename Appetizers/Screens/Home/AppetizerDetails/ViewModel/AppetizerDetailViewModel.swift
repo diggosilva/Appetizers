@@ -16,7 +16,7 @@ class AppetizerDetailViewModel {
         self.appetizer = appetizer
     }
     
-    func addApetizer() {
+    func addAppetizer() {
         OrderSingleton.shared.listaProdutos.value.append(appetizer)
     }
 }

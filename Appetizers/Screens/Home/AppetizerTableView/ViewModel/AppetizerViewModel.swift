@@ -15,6 +15,7 @@ enum State {
 
 protocol AppetizerViewModelProtocol {
     var state: Bindable<State> { get set }
+    var requestWay: Bindable<RequestWay> { get set }
     
     //TableView
     func numberOfRows() -> Int
@@ -27,15 +28,17 @@ protocol AppetizerViewModelProtocol {
 class AppetizerViewModel: AppetizerViewModelProtocol {
     
     var state: Bindable<State> = Bindable(value: .loading)
+    var requestWay: Bindable<RequestWay> = Bindable(value: .unknown)
     
     private var service: ServiceProtocol = Service()
     private var appetizerList: [Appetizer] = []
     
     func loadData() {
         guard !service.isUpdating() else { return }
-        service.getAppetizers { response in
+        service.getAppetizers { response, requestWay  in
             self.appetizerList = response
             self.state.value = .loaded
+            self.requestWay.value = requestWay
         } onError: { error in
             self.state.value = .error
         }

@@ -30,7 +30,6 @@ class AppetizerDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        loadView()
         loadDetails()
     }
     
@@ -45,8 +44,7 @@ class AppetizerDetailViewController: UIViewController {
 
 extension AppetizerDetailViewController: AppetizerDetailViewDelegate {
     func didTapAddOrder() {
-        print("DEBUG: Adiciona item na lista de Pedido")
-        viewModel.addApetizer()
+        viewModel.addAppetizer()
         dismiss(animated: true)
     }
     
