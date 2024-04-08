@@ -9,7 +9,7 @@
 
 # Appetizers
 
-    A Swift iOS Appetizers app, allowing you to select and add them on the order screen, the button shows the total order amount and a badge shows the number of appetizers added, and also has a screen with the user's personal data. Both the data entered and the finalize order button are for illustration purposes only.
+A Swift iOS Appetizers app, allowing you to select and add them on the order screen, the button shows the total order amount and a badge shows the number of appetizers added, and also has a screen with the user's personal data. Both the data entered and the finalize order button are for illustration purposes only.
 
 
 <p align="left">
