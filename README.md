@@ -1,3 +1,5 @@
+# Appetizers
+
 <p align="center">
     <img src="https://img.shields.io/badge/Swift-5.9.1-orange.svg" />
     <img src="https://img.shields.io/badge/Xcode-15.2.X-orange.svg" />
@@ -6,8 +8,6 @@
         <img src="https://img.shields.io/badge/LinkedIn-@RodrigoSilva-blue.svg?style=flat" alt="LinkedIn: @RodrigoSilva" />
     </a>
 </p>
-
-# Appetizers
 
 A Swift iOS Appetizers app, allowing you to select and add them on the order screen, the button shows the total order amount and a badge shows the number of appetizers added, and also has a screen with the user's personal data. Both the data entered and the finalize order button are for illustration purposes only.
 
