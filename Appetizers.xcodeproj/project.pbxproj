@@ -117,9 +117,10 @@
 		9211430B2B1CC5A200116615 /* AppetizerTableView */ = {
 			isa = PBXGroup;
 			children = (
-				9249F7D62B3770C8004C0C54 /* Controller */,
-				9249F7D72B3770CC004C0C54 /* Views */,
-				92298A802B5A06A70074BB83 /* ViewModel */,
+				921E39D82B1BB0E9002F22A5 /* AppetizerViewController.swift */,
+				921E39DC2B1BC545002F22A5 /* AppetizerView.swift */,
+				921E39DE2B1BC808002F22A5 /* AppetizerCell.swift */,
+				92298A812B5A06C50074BB83 /* AppetizerViewModel.swift */,
 			);
 			path = AppetizerTableView;
 			sourceTree = "<group>";
@@ -127,9 +128,10 @@
 		9211430C2B1CC76B00116615 /* OrderTableView */ = {
 			isa = PBXGroup;
 			children = (
-				9249F7D82B3770E2004C0C54 /* Controller */,
-				9249F7D92B3770E3004C0C54 /* Views */,
-				92C2FD5A2B5F1AFE00AE2900 /* ViewModel */,
+				921143082B1CC4C700116615 /* OrderViewController.swift */,
+				921143062B1CC49D00116615 /* OrderView.swift */,
+				9211430D2B1CC9A600116615 /* OrderCell.swift */,
+				92C2FD582B5F1AF900AE2900 /* OrderViewModel.swift */,
 			);
 			path = OrderTableView;
 			sourceTree = "<group>";
@@ -137,27 +139,11 @@
 		921C328C2B56AC7700F5419C /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				921C328E2B56AC9E00F5419C /* Controller */,
-				921C328D2B56AC9900F5419C /* View */,
-				928870B42B61B5A90062D89D /* ViewModel */,
+				921C32912B56B16E00F5419C /* AccountViewController.swift */,
+				921C328F2B56ACCC00F5419C /* AccountView.swift */,
+				928870B52B61B5F20062D89D /* AccountViewModel.swift */,
 			);
 			path = Account;
-			sourceTree = "<group>";
-		};
-		921C328D2B56AC9900F5419C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				921C328F2B56ACCC00F5419C /* AccountView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		921C328E2B56AC9E00F5419C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				921C32912B56B16E00F5419C /* AccountViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		921E39B72B1BA4A5002F22A5 = {
@@ -181,11 +167,6 @@
 			children = (
 				9249F7D52B376ED7004C0C54 /* App */,
 				921E39D72B1BA4C1002F22A5 /* Resources */,
-				92D8836A2B58352F00BB2285 /* Network */,
-				921143052B1CC46000116615 /* Utils */,
-				921143022B1CC2DF00116615 /* Model */,
-				9211430A2B1CC59B00116615 /* Screens */,
-				921E39D12B1BA4A6002F22A5 /* Info.plist */,
 			);
 			path = Appetizers;
 			sourceTree = "<group>";
@@ -198,16 +179,9 @@
 				921E39C52B1BA4A5002F22A5 /* SceneDelegate.swift */,
 				921E39CE2B1BA4A6002F22A5 /* LaunchScreen.storyboard */,
 				921E39CC2B1BA4A6002F22A5 /* Assets.xcassets */,
+				921E39D12B1BA4A6002F22A5 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		92298A802B5A06A70074BB83 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				92298A812B5A06C50074BB83 /* AppetizerViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		92298A852B5A1A490074BB83 /* Home */ = {
@@ -222,93 +196,23 @@
 		92298A862B5A1A5C0074BB83 /* AppetizerDetails */ = {
 			isa = PBXGroup;
 			children = (
-				92298A892B5A1A7F0074BB83 /* Controller */,
-				92298A882B5A1A7F0074BB83 /* View */,
-				92298A872B5A1A7D0074BB83 /* ViewModel */,
-			);
-			path = AppetizerDetails;
-			sourceTree = "<group>";
-		};
-		92298A872B5A1A7D0074BB83 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
+				921E39E92B1BE3A6002F22A5 /* AppetizerDetailViewController.swift */,
+				921E39E72B1BDDCF002F22A5 /* AppetizerDetailView.swift */,
 				929565052B5AD46800E3953F /* AppetizerDetailViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		92298A882B5A1A7F0074BB83 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				921E39E72B1BDDCF002F22A5 /* AppetizerDetailView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		92298A892B5A1A7F0074BB83 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				921E39E92B1BE3A6002F22A5 /* AppetizerDetailViewController.swift */,
-			);
-			path = Controller;
+			path = AppetizerDetails;
 			sourceTree = "<group>";
 		};
 		9249F7D52B376ED7004C0C54 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				921E39C72B1BA4A5002F22A5 /* AppetizerTabBar.swift */,
+				921143022B1CC2DF00116615 /* Model */,
+				92D8836A2B58352F00BB2285 /* Network */,
+				9211430A2B1CC59B00116615 /* Screens */,
+				921143052B1CC46000116615 /* Utils */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		9249F7D62B3770C8004C0C54 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				921E39D82B1BB0E9002F22A5 /* AppetizerViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		9249F7D72B3770CC004C0C54 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				921E39DC2B1BC545002F22A5 /* AppetizerView.swift */,
-				921E39DE2B1BC808002F22A5 /* AppetizerCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9249F7D82B3770E2004C0C54 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				921143082B1CC4C700116615 /* OrderViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		9249F7D92B3770E3004C0C54 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				921143062B1CC49D00116615 /* OrderView.swift */,
-				9211430D2B1CC9A600116615 /* OrderCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		928870B42B61B5A90062D89D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				928870B52B61B5F20062D89D /* AccountViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		92C2FD5A2B5F1AFE00AE2900 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				92C2FD582B5F1AF900AE2900 /* OrderViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		92D8836A2B58352F00BB2285 /* Network */ = {
@@ -566,7 +470,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57HYQW6DAG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Appetizers/Info.plist;
+				INFOPLIST_FILE = Appetizers/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -592,7 +496,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57HYQW6DAG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Appetizers/Info.plist;
+				INFOPLIST_FILE = Appetizers/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
