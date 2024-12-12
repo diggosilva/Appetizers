@@ -12,3 +12,7 @@ extension UIView {
         views.forEach({ self.addSubview($0) })
     }
 }
+
+struct Currency {
+    static var USDToday: Double = 6
+}
