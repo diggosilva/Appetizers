@@ -50,38 +50,6 @@
             endingLineNumber = "40"
             landmarkName = "didTapAddOrder(appetizer:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1EBB8E8A-721C-44BC-A6DB-5AC2EFA80165 - c42a106e97e5c48f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appetizers.AppetizerDetailViewController.didTapAddOrder(appetizer: Swift.Optional&lt;Appetizers.Appetizer&gt;) -&gt; ()"
-                  moduleName = "Appetizers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diggosilva/Desktop/Appetizers/Appetizers/Screens/AppetizerTableView/AppetizerDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "1EBB8E8A-721C-44BC-A6DB-5AC2EFA80165 - c42a106e97e5c4ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appetizers.AppetizerDetailViewController.didTapAddOrder(appetizer: Swift.Optional&lt;Appetizers.Appetizer&gt;) -&gt; ()"
-                  moduleName = "Appetizers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diggosilva/Desktop/Appetizers/Appetizers/Screens/AppetizerTableView/AppetizerDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "460">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
