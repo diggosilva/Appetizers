@@ -46,7 +46,7 @@ class AppetizerCell: UITableViewCell {
         DispatchQueue.main.async {
             self.appetizerImage.sd_setImage(with: url)
             self.appetizerName.text = model.name
-            self.appetizerPrice.text = "R$\(String(format: "%.2f", model.price * 5))"
+            self.appetizerPrice.text = "R$\(String(format: "%.2f", model.price * Currency.USDToday))"
         }
     }
     

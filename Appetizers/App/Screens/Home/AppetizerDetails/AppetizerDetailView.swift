@@ -106,7 +106,7 @@ class AppetizerDetailView: UIView {
             self.caloriesValueLabel.text = "\(model.calories)"
             self.carbsValueLabel.text = "\(model.carbs)"
             self.proteinValueLabel.text = "\(model.protein)"
-            self.orderButton.setTitle("R$\(String(format: "%.2f", model.price * 5)) - Adicionar", for: .normal)
+            self.orderButton.setTitle("R$\(String(format: "%.2f", model.price * Currency.USDToday)) - Adicionar", for: .normal)
         }
     }
     

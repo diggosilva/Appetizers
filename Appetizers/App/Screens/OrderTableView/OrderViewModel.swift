@@ -60,7 +60,7 @@ class OrderViewModel: OrderViewModelProtocol {
         orderedList.forEach { appetizer in
             valor += appetizer.price
         }
-        return "R$\(String(format: "%.2f", valor * 5)) - Total"
+        return "R$\(String(format: "%.2f", valor * Currency.USDToday)) - Total"
     }
     
     func deleteItems(_ indexPath: IndexPath) {
