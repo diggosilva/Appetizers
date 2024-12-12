@@ -26,12 +26,15 @@ protocol AppetizerViewModelProtocol {
 }
 
 class AppetizerViewModel: AppetizerViewModelProtocol {
-    
     var state: Bindable<State> = Bindable(value: .loading)
     var requestWay: Bindable<RequestWay> = Bindable(value: .unknown)
     
     private var service: ServiceProtocol = Service()
     private var appetizerList: [Appetizer] = []
+    
+    init(service: ServiceProtocol = Service()) {
+        self.service = service
+    }
     
     func loadData() {
         guard !service.isUpdating() else { return }
@@ -41,6 +44,7 @@ class AppetizerViewModel: AppetizerViewModelProtocol {
             self.requestWay.value = requestWay
         } onError: { error in
             self.state.value = .error
+            self.requestWay.value = .unknown
         }
     }
     
